@@ -12,5 +12,54 @@ I built **MyLibrary** because I wanted a lightweight, efficient toolkit that emp
 
 ### Install MyLibrary using the Go toolchain
 
-```bash
 go get github.com/yourusername/mylibrary
+
+## Use MyLibrary in your Go project
+
+package main
+
+import (
+    "fmt"
+    "github.com/yourusername/mylibrary"
+)
+
+func main() {
+    result := mylibrary.DoSomething("example input")
+    fmt.Println(result)
+}
+
+## 📖 Usage
+
+MyLibrary provides several options and functions to help you transform and validate data with ease.
+
+### Available features:
+
+- `CleanData(input string) string` — Sanitizes input by removing unwanted characters.
+- `ValidateFormat(input string) bool` — Checks if the input matches expected formats.
+- `TransformCase(input string, mode string) string` — Converts text to uppercase, lowercase, or title case.
+- `BatchProcess(inputs []string) []string` — Processes multiple inputs efficiently.
+
+### Configuration options:
+
+- `MaxRetries` (int) — Number of retry attempts on failure (default 3)
+- `Timeout` (duration) — Maximum wait time for operations (default 5s)
+- `EnableLogging` (bool) — Toggle verbose logging (default false)
+
+## Examples
+
+### Clean and validate a single string
+
+cleaned := mylibrary.CleanData("  Hello, World!  ")
+isValid := mylibrary.ValidateFormat(cleaned)
+fmt.Println(cleaned, isValid)
+
+## Transform text to title case
+
+title := mylibrary.TransformCase("hello world from golang", "title")
+fmt.Println(title) // Hello World From Golang
+
+## Process a batch of strings
+
+inputs := []string{"input1", "input2", "input3"}
+results := mylibrary.BatchProcess(inputs)
+fmt.Println(results)
