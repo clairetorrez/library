@@ -12,7 +12,7 @@ I built **MyLibrary** because I wanted a lightweight, efficient toolkit that emp
 
 ### Install MyLibrary using the Go toolchain
 
-go get github.com/yourusername/mylibrary
+go get github.com/clairetorrez/mylibrary
 
 ## Use MyLibrary in your Go project
 
@@ -20,7 +20,7 @@ package main
 
 import (
     "fmt"
-    "github.com/yourusername/mylibrary"
+    "github.com/clairetorrez/mylibrary"
 )
 
 func main() {
@@ -53,13 +53,32 @@ cleaned := mylibrary.CleanData("  Hello, World!  ")
 isValid := mylibrary.ValidateFormat(cleaned)
 fmt.Println(cleaned, isValid)
 
-## Transform text to title case
+### Transform text to title case
 
 title := mylibrary.TransformCase("hello world from golang", "title")
 fmt.Println(title) // Hello World From Golang
 
-## Process a batch of strings
+### Process a batch of strings
 
 inputs := []string{"input1", "input2", "input3"}
 results := mylibrary.BatchProcess(inputs)
 fmt.Println(results)
+
+## 🤝 Contributing
+
+### Clone the repo
+
+git clone https://github.com/clairetorrez/mylibrary.git <br>
+cd mylibrary
+
+### Build the project
+go build
+
+### Run the project
+./mylibrary
+
+### Run the tests
+go test ./...
+
+### Submit a pull request
+If you'd like to contribute, please fork the repository and open a pull request to the main branch. We welcome bug fixes, feature requests, and improvements to documentation!
